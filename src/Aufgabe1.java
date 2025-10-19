@@ -23,6 +23,29 @@ public static class Aufgabe1 {
         return sum / noten.length;
     }
 
+    public int[] aufrunden(int[] noten){
+
+        for(int i = 0; i < noten.length; i++){
+            if(noten[i] > 100) noten[i] = 100;
+
+            if(noten[i] < 0) noten[i] = 0;
+
+            if(noten[i] >= 38){
+                int x = 40;
+
+                while(x < noten[i]){
+                    x += 5;
+                }
+
+                if(x - noten[i] < 3) {
+                    noten[i] = x;
+                }
+            }
+
+        }
+
+        return noten;
+    }
 
 
 }
@@ -31,13 +54,16 @@ public static class Aufgabe1 {
 void main() {
     int[] noten = {84,100,38,20,60,65,62};
 
+
     for(int note : noten){
         System.out.print(note);
         System.out.print(' ');
     }
+
     Aufgabe1 aufgabe1 = new Aufgabe1();
-    noten = aufgabe1.fail_noten(noten);
-    System.out.println();
+
+    System.out.println(aufgabe1.durchschnitt(noten));
+    noten = aufgabe1.aufrunden(noten);
 
     for(int note : noten){
         if(note != 0){
@@ -45,6 +71,7 @@ void main() {
             System.out.print(' ');
         }
     }
+
 
 
 }
