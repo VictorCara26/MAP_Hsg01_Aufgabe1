@@ -13,6 +13,17 @@ public static class Aufgabe1 {
 
         return new_noten;
     }
+    public double durchschnitt(int[] noten) {
+        double sum = 0;
+
+        for(int note : noten){
+            sum += note;
+        }
+
+        return sum / noten.length;
+    }
+
+
 
 }
 
