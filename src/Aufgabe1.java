@@ -1,26 +1,40 @@
-public class Aufgabe1 {
+public static class Aufgabe1 {
 
-    public int[] aufrunden(int noten[]){
+
+    public int[] fail_noten(int[] noten){
+        int[] new_noten = new int[noten.length];
+        int ct = 0;
 
         for(int note : noten){
-
-            if(note > 100) note = 100;
-
-            if(note < 0) note = 0;
-
-            if(note >= 38){
-                int x = 40;
-
-                while(x < note){
-                    x += 5;
-                }
-
-                if(x - note < 3) note = x;
+            if(note < 40){
+                new_noten[ct++] = note;
             }
-
         }
 
-        return noten;
+        return new_noten;
     }
+
+
+}
+
+
+void main() {
+    int[] noten = {84,100,38,20,60,65,62};
+
+    for(int note : noten){
+        System.out.print(note);
+        System.out.print(' ');
+    }
+    Aufgabe1 aufgabe1 = new Aufgabe1();
+    noten = aufgabe1.fail_noten(noten);
+    System.out.println();
+
+    for(int note : noten){
+        if(note != 0){
+            System.out.print(note);
+            System.out.print(' ');
+        }
+    }
+
 
 }
