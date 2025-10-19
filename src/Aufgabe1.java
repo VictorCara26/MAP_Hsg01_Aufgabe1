@@ -37,9 +37,7 @@ public static class Aufgabe1 {
                     x += 5;
                 }
 
-                if(x - noten[i] < 3) {
-                    noten[i] = x;
-                }
+                if(x - noten[i] < 3) noten[i] = x;
             }
 
         }
@@ -55,10 +53,10 @@ void main() {
     int[] noten = {84,100,38,20,60,65,62};
 
 
-    for(int note : noten){
-        System.out.print(note);
-        System.out.print(' ');
-    }
+//    for(int note : noten){
+//        System.out.print(note);
+//        System.out.print(' ');
+//    }
 
     Aufgabe1 aufgabe1 = new Aufgabe1();
 
