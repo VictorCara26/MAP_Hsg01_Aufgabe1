@@ -14,7 +14,6 @@ public static class Aufgabe1 {
         return new_noten;
     }
 
-
 }
 
 
